@@ -11,6 +11,11 @@ async def healthz():
     """서빙 API 가 요청을 받을 수 있으면 {"status": "ok"} 를 돌려준다(vLLM 은 부르지 않는다)."""
     return {"status": "ok"}
 
+@system_router.get("/hello")
+async def hello_encore():
+    return {"인삿말": "안녕하세요~!"}
+
+
 
 @system_router.get("/v1/models")
 async def list_models():
